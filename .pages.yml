@@ -1,42 +1,34 @@
-backend:
-  name: git-gateway
-  branch: main
+media: images
 
-media_folder: "images"
-public_folder: "/images"
+content:
+  - name: site
+    label: サイト設定
+    type: file
+    path: content/site.json
+    fields:
+      - { name: title, label: サイトタイトル, type: string }
+      - { name: hero_title, label: ヒーロータイトル, type: string }
+      - { name: hero_text, label: ヒーローテキスト, type: text }
+      - { name: hero_button, label: ヒーローボタン, type: string }
+      - { name: about, label: サロン紹介, type: text }
+      - { name: address, label: 住所, type: string }
+      - { name: tel, label: 電話番号, type: string }
+      - { name: contact_text, label: お問い合わせ文, type: text }
+      - { name: reserve_button, label: 予約ボタン, type: string }
+      - { name: map_url, label: 地図URL, type: string }
+      - { name: footer, label: フッター, type: string }
 
-collections:
-
-  - name: "site"
-    label: "サイト全体"
-    files:
-      - file: "content/site.json"
-        name: "site"
-        label: "サイト設定"
+  - name: menu
+    label: メニュー一覧
+    type: file
+    path: content/menu.json
+    fields:
+      - name: items
+        label: メニュー項目
+        type: object
+        list: true
         fields:
-          - { name: title, widget: string }
-          - { name: hero_title, widget: string }
-          - { name: hero_text, widget: text }
-          - { name: hero_button, widget: string }
-          - { name: about, widget: text }
-          - { name: address, widget: string }
-          - { name: tel, widget: string }
-          - { name: contact_text, widget: text }
-          - { name: reserve_button, widget: string }
-          - { name: map_url, widget: string }
-          - { name: footer, widget: string }
-
-  - name: "menu"
-    label: "メニュー"
-    files:
-      - file: "content/menu.json"
-        name: "menu"
-        label: "メニュー一覧"
-        fields:
-          - name: items
-            widget: list
-            fields:
-              - { name: id, widget: string }
-              - { name: name, widget: string }
-              - { name: price, widget: string }
-              - { name: description, widget: text }
+          - { name: id, label: ID, type: string }
+          - { name: name, label: 名称, type: string }
+          - { name: price, label: 価格, type: string }
+          - { name: description, label: 説明, type: text }
