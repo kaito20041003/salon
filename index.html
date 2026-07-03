@@ -27,7 +27,6 @@
     <div class="hero-text">
         <h2 id="hero-title">coming soon</h2>
         <p id="hero-text"></p>
-        <img id="hero-image" src="" alt="">
         <a href="#contact" class="button" id="hero-button">お問い合わせ</a>
     </div>
 </section>
@@ -64,8 +63,12 @@ fetch("content/site.json")
     document.getElementById("site-title").innerText = data.title;
     document.getElementById("hero-title").innerText = data.hero_title;
     document.getElementById("hero-text").innerText = data.hero_text;
-    document.getElementById("hero-image").src = data.hero_image;
-    document.getElementById("hero-image").alt = data.hero_title;
+
+    if (data.hero_image) {
+        document.querySelector(".hero").style.backgroundImage =
+            `linear-gradient(rgba(251,232,236,0.75), rgba(255,255,255,0.85)), url("${data.hero_image.replace(/^\//, "")}")`;
+    }
+
     document.getElementById("hero-button").innerText = data.hero_button;
     document.getElementById("about-text").innerText = data.about;
     document.getElementById("address").innerText = data.address;
