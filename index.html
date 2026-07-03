@@ -18,6 +18,13 @@
             <li><a href="#menu">メニュー</a></li>
             <li><a href="#access">アクセス</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
+
+            <!-- Instagram -->
+            <li>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -58,6 +65,12 @@
 
 <footer>
     <p id="footer-text">© 2026 Beauty Salon</p>
+
+    <p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            Instagramはこちら
+        </a>
+    </p>
 </footer>
 
 <script>
@@ -86,11 +99,12 @@ fetch("content/site.json")
     document.getElementById("footer-text").innerText = data.footer;
 });
 
-fetch("content/menu")
+fetch("content/menu.json")
 .then(res => res.json())
 .then(menu => {
 
     const container = document.getElementById("menu-list");
+    container.innerHTML = "";
 
     menu.forEach(item => {
 
