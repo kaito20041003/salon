@@ -6,12 +6,9 @@
     <title>Beauty Salon</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <header>
     <h1 id="site-title">Beauty Salon</h1>
-
     <nav>
         <ul>
             <li><a href="#about">サロン紹介</a></li>
@@ -26,40 +23,33 @@
         </ul>
     </nav>
 </header>
-
 <section class="hero">
     <div class="hero-text">
         <h2 id="hero-title">coming soon</h2>
         <p id="hero-text"></p>
+        <img id="hero-image" src="" alt="">
         <a href="#contact" class="button" id="hero-button">お問い合わせ</a>
     </div>
 </section>
-
 <section id="about">
     <h2>サロン紹介</h2>
     <p id="about-text"></p>
 </section>
-
 <section id="menu">
     <h2>メニュー</h2>
     <div id="menu-list"></div>
 </section>
-
 <section id="access">
     <h2>アクセス</h2>
     <p id="address"></p>
     <iframe id="map" loading="lazy"></iframe>
 </section>
-
 <section id="contact">
     <h2>お問い合わせ</h2>
-
     <p id="tel"></p>
     <p id="contact-text"></p>
-
     <a href="#" class="button" id="reserve-button">予約する</a>
 </section>
-
 <footer>
     <p id="footer-text">© 2026 Beauty Salon</p>
 </footer>
@@ -71,12 +61,12 @@
 fetch("content/site.json")
 .then(res => res.json())
 .then(data => {
-
     document.getElementById("site-title").innerText = data.title;
     document.getElementById("hero-title").innerText = data.hero_title;
     document.getElementById("hero-text").innerText = data.hero_text;
+    document.getElementById("hero-image").src = data.hero_image;
+    document.getElementById("hero-image").alt = data.hero_title;
     document.getElementById("hero-button").innerText = data.hero_button;
-
     document.getElementById("about-text").innerText = data.about;
     document.getElementById("address").innerText = data.address;
     document.getElementById("tel").innerText = "TEL：" + data.tel;
@@ -86,34 +76,26 @@ fetch("content/site.json")
     document.getElementById("footer-text").innerText = data.footer;
 });
 
-
 /* =======================
    menu.json（A案：CMS統一）
 ======================= */
 fetch("content/menu.json")
 .then(res => res.json())
 .then(data => {
-
     const menu = data.items; // ★ここで完全統一
     const container = document.getElementById("menu-list");
-
     container.innerHTML = "";
-
     menu.forEach(item => {
-
         const div = document.createElement("div");
         div.className = "card";
-
         div.innerHTML = `
             <h3>${item.name}</h3>
             <p class="price">${item.price}</p>
             <p class="desc">${item.description}</p>
         `;
-
         container.appendChild(div);
     });
 });
 </script>
-
 </body>
 </html>
