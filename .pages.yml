@@ -7,9 +7,6 @@ public_folder: "/images"
 
 collections:
 
-  # ======================
-  # サイト全体設定（GUI化）
-  # ======================
   - name: "site"
     label: "サイト全体"
     files:
@@ -17,21 +14,18 @@ collections:
         name: "site"
         label: "サイト設定"
         fields:
-          - { name: title, label: タイトル, widget: string }
-          - { name: hero_title, label: ヒーロー見出し, widget: string }
-          - { name: hero_text, label: ヒーローテキスト, widget: text }
-          - { name: hero_button, label: ボタン文言, widget: string }
-          - { name: about, label: サロン紹介, widget: text }
-          - { name: address, label: 住所, widget: string }
-          - { name: tel, label: 電話番号, widget: string }
-          - { name: contact_text, label: 問い合わせ文, widget: text }
-          - { name: reserve_button, label: 予約ボタン, widget: string }
-          - { name: map_url, label: GoogleMapURL, widget: string }
-          - { name: footer, label: フッター, widget: string }
+          - { name: title, widget: string }
+          - { name: hero_title, widget: string }
+          - { name: hero_text, widget: text }
+          - { name: hero_button, widget: string }
+          - { name: about, widget: text }
+          - { name: address, widget: string }
+          - { name: tel, widget: string }
+          - { name: contact_text, widget: text }
+          - { name: reserve_button, widget: string }
+          - { name: map_url, widget: string }
+          - { name: footer, widget: string }
 
-  # ======================
-  # メニュー（No entries解消版）
-  # ======================
   - name: "menu"
     label: "メニュー"
     files:
@@ -40,10 +34,9 @@ collections:
         label: "メニュー一覧"
         fields:
           - name: items
-            label: メニューリスト
             widget: list
             fields:
-              - { name: id, label: ID, widget: string }
-              - { name: name, label: メニュー名, widget: string }
-              - { name: price, label: 料金, widget: string }
-              - { name: description, label: 説明, widget: text }
+              - { name: id, widget: string }
+              - { name: name, widget: string }
+              - { name: price, widget: string }
+              - { name: description, widget: text }
