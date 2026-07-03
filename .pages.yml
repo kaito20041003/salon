@@ -11,7 +11,7 @@ content:
         type: string
 
       - name: hero_title
-        label: ヒーロータイトル
+        label: タイトル
         type: string
 
       - name: hero_text
