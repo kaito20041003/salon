@@ -1,22 +1,16 @@
 {
   "items": [
     {
-      "id": "cut",
-      "name": "カット",
-      "price": "3000円",
-      "description": "骨格に合わせた似合わせカット"
+      "name": "ｙｙｙｙｙｙｙｙ",
+      "price": "1234567890"
     },
     {
-      "id": "color",
       "name": "カラー",
-      "price": "5000円",
-      "description": "透明感のあるナチュラルカラー"
+      "price": "5000円"
     },
     {
-      "id": "treatment",
       "name": "トリートメント",
-      "price": "4000円",
-      "description": "髪質改善トリートメント"
+      "price": "4000円"
     }
   ]
 }
